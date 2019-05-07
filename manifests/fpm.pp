@@ -36,10 +36,6 @@ class php::fpm (
   Hash[String, Hash[String, Any]]                                $pools                       = {},
 ) {
 
-  if ! defined(Class['::php']) {
-    fail('You must include the php base class before using the php::fpm class')
-  }
-
   contain ::php::fpm::install
   contain ::php::fpm::config
   contain ::php::fpm::service

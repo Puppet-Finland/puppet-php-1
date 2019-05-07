@@ -82,10 +82,6 @@ define php::fpm::pool (
   Hash[String, String]                             $php_admin_value           = {},
 ) {
 
-  if ! defined(Class['::php::fpm']) {
-    fail('You must include the php::fpm base class before using any php::fpm defined resources')
-  }
-
   file { "${::php::fpm::conf_dir}/${pool}.conf":
     ensure  => file,
     owner   => 0,

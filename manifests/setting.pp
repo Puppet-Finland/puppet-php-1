@@ -20,10 +20,6 @@ define php::setting (
   String                    $setting = $title,
 ) {
 
-  if ! defined(Class['::php']) {
-    fail('You must include the php base class before using any php defined resources')
-  }
-
   php_ini_setting { $setting:
     ensure => $ensure,
     value  => $value,

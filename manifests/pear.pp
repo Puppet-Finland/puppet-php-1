@@ -13,10 +13,6 @@ class php::pear (
   String $package_name,
 ) {
 
-  if ! defined(Class['::php']) {
-    fail('You must include the php base class before using the php::pear class')
-  }
-
   package { $package_name:
     ensure => present,
   }

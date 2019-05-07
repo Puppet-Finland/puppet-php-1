@@ -31,10 +31,6 @@ define php::extension (
   Hash[String, String]      $settings     = {},
 ) {
 
-  if ! defined(Class['::php']) {
-    fail('You must include the php base class before using any php defined resources')
-  }
-
   if $package_name {
     package { $package_name:
       ensure => $ensure,
